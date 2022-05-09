@@ -59,48 +59,6 @@ exports.deleteSauce = (req, res, next) => {
     .catch((error) => res.status(500).json({ error }));
 };
 
-/* exports.likeSauce = (req, res, next) => {
-  console.log('toto');
-  const userId = req.body.userId;
-  const like = req.body.like;
-  const sauceId = req.params.id;
- 
-  Sauce.findOne({ _id: sauceId })
-    .then((sauce) => {
-      const sauceUpdate = {
-        usersLiked: sauce.usersLiked,
-        usersDisliked: sauce.usersDisliked,
-        likes: Number(0),
-       dislikes: 0
-      };
-      sauceUpdate.likes = 0;
-    
-      switch (like) {
-        case 1: //like
-         // sauceUpdate.usersLiked.push(userId);
-         // sauceUpdate.likes = new Number(sauceUpdate.usersLiked.length);
-         
-          break;
-
-        case 0: //annulation like/dislike
-
-          break;
-
-        case -1: //dislike
-
-          break;
-
-        default:
-          break;
-      }
-
-      
-      Sauce.updateOne({ _id: userId }, sauceUpdate)
-        .then(() => res.status(200).json({ message: "" }))
-        .catch((error) => res.status(400).json({ error }));
-    })
-    .catch((error) => res.status(400).json({ error }));
-}; */
 
 exports.likeSauce = (req, res, next) => {
   console.log('toto');
