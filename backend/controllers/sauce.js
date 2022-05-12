@@ -16,6 +16,8 @@ exports.createSauce = (req, res, next) => {
     imageUrl: `${req.protocol}://${req.get("host")}/images/${
       req.file.filename
     }`,
+    likes: 0,
+    dislikes: 0
   });
   sauce
     .save()
@@ -61,7 +63,6 @@ exports.deleteSauce = (req, res, next) => {
 
 
 exports.likeSauce = (req, res, next) => {
-  console.log('toto');
   const userId = req.body.userId;
   const like = req.body.like;
   const sauceId = req.params.id;
